@@ -51,4 +51,23 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class);
     }
+ // Query scopes
+ public function scopeAge($query, $age)
+ {
+     return $query->where('age', $age);
+ }
+
+ public function scopeLocation($query, $location)
+ {
+     return $query->where('location', $location);
+ }
+
+ public function scopeGender($query, $gender)
+ {
+     return $query->where('gender', $gender);
+ }
+ public function scopePhone($query, $phone)
+ {
+     return $query->where('phone', $phone);
+ }
 }
